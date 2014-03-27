@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
   # Configure vm name and resources
   config.vm.provider :virtualbox do |vb|
-    vb.name = "bml"
+    vb.name = "bml-base"
     vb.customize ["modifyvm", :id, "--memory", "512"]
     vb.customize ["modifyvm", :id, "--cpus", "1"]
   end
