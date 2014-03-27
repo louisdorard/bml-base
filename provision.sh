@@ -36,10 +36,10 @@ pip install --upgrade google-api-python-client
 # install gsutil to upload stuff to Google Cloud Storage
 # unfortunately, `pip install -U gsutil` is unstable, so we install it "old-school" (see https://developers.google.com/storage/docs/gsutil_install)
 wget http://storage.googleapis.com/pub/gsutil.tar.gz
-mv gsutil.tar.gz /vagrant/lib
-tar xfz /vagrant/lib/gsutil.tar.gz -C /vagrant/lib/
-echo "export PATH=${PATH}:/vagrant/lib/gsutil" >> .bashrc
-echo "export PYTHONPATH=${PYTHONPATH}:/vagrant/lib/gsutil/third_party/boto:/vagrant/lib/gsutil" >> .bashrc
+mv gsutil.tar.gz /usr/lib
+tar xfz /usr/lib/gsutil.tar.gz -C /usr/lib/
+echo "export PATH=${PATH}:/usr/lib/gsutil" >> .bashrc
+echo "export PYTHONPATH=${PYTHONPATH}:/usr/lib/gsutil/third_party/boto:/usr/lib/gsutil" >> .bashrc
 
 apt-get install python-socksipy # @todo: what's that? where does it say we need it?
 pip install retry_decorator # @todo: what's that? where does it say we need it?
