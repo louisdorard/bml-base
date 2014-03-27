@@ -18,6 +18,9 @@ pip install ipython --upgrade
 # Jinja is required for ipython notebook to work (see http://ipython.org/ipython-doc/stable/install/install.html)
 pip install jinja2 
 
+# configure auto start of server
+cp /vagrant/autostartipynb.conf /etc/init/
+
 
 ####################
 #       BigML      #
