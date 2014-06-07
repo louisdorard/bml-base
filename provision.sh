@@ -6,20 +6,11 @@ apt-get update
 # in case we need to git-clone repos (but versioning would be done from the host, not the VM)
 apt-get install -y git-core
 
-
-####################
-# Ipython Notebook #
-####################
-
-# @todo: install anaconda instead (for access to scipy, numpy, scikit-learn, etc.; should also contain the packages below)?
-apt-get install -y python-pip ipython-notebook
-pip install ipython --upgrade
-
-# Jinja is required for ipython notebook to work (see http://ipython.org/ipython-doc/stable/install/install.html)
-pip install jinja2 
-
-# configure auto start of server
+# configure auto start of ipynb server
 cp /vagrant/autostartipynb.conf /etc/init/
+
+# install the pip installer which is used to install the rest
+conda install pip --yes # or, with apt-get: apt-get install -y python-pip 
 
 
 ####################
@@ -47,15 +38,5 @@ echo "export PYTHONPATH=${PYTHONPATH}:/usr/lib/gsutil/third_party/boto:/usr/lib/
 apt-get install python-socksipy # @todo: what's that? where does it say we need it?
 pip install retry_decorator # @todo: what's that? where does it say we need it?
 
-
-#########################
-#      Scikit-Learn     #
-#########################
-
-# installing dependencies
-apt-get -y install build-essential python-dev python-numpy python-setuptools python-scipy libatlas-dev libatlas3gf-base
-
-# installing scikit-learn
-pip install -U scikit-learn
 
 echo "... and we're done!"
