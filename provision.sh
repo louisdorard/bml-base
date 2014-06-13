@@ -2,9 +2,6 @@
 
 echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..."
 
-# configure auto start of ipynb server
-sudo cp /vagrant/autostartipynb.conf /etc/init/
-
 # install the pip installer which is used to install the rest
 conda install pip --yes # or, with apt-get: apt-get install -y python-pip 
 
@@ -41,17 +38,17 @@ source ~/.bashrc
 # Optional installs #
 #####################
 
-# sudo apt-get update
+sudo apt-get update
 
 # in case we need to git-clone repos (but versioning would be done from the host, not the VM)
-# sudo apt-get install -y git-core
+sudo apt-get install -y git-core
 
 # optional: install vim
-# apt-get install -y vim
+sudo apt-get install -y vim
 
 # optional: use zsh and oh-my-zsh
-# apt-get install -y zsh
-# wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-# chsh -s /usr/bin/zsh vagrant # change shell for 'vagrant' user
+sudo apt-get install -y zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+sudo chsh -s /usr/bin/zsh vagrant # change shell for 'vagrant' user
 
 echo "... and we're done!"
