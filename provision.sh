@@ -1,6 +1,6 @@
-# When using vagrant, this provisioning script should be run by the 'vagrant' user
+# provisioning script to be run on https://www.terminal.com/snapshot/987f8d702dc0a6e8158b48ccd3dec24f819a7ccb2756c396ef1fd7f5b34b7980 after a directory /work has been created
 
-echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..."
+echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..." # a.k.a. "papibox"
 
 # Base stuff
 ####
@@ -23,7 +23,6 @@ sudo apt-get install -y wget git vim zsh s3cmd curl
 
 # Install "mini" anaconda python distribution (python 2.7) and a couple of packages
 wget http://repo.continuum.io/miniconda/Miniconda-3.5.2-Linux-x86_64.sh
-mkdir /work
 /bin/bash Miniconda-3.5.2-Linux-x86_64.sh -b -p /work/anaconda/
 rm Miniconda-3.5.2-Linux-x86_64.sh
 /work/anaconda/bin/conda update conda --yes
@@ -69,5 +68,12 @@ pip install bigmler
 # # apt-get install python-socksipy
 # # pip install retry_decorator
 # # @todo: what's that? where does it say we need it?
+
+
+# papiseval
+####
+
+cd /work
+git clone https://github.com/louisdorard/papiseval.git
 
 echo "... and we're done!"
