@@ -7,7 +7,7 @@ echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..." # 
 
 # Make sure we're up to date
 echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-sudo apt-get update && apt-get upgrade -y
+apt-get update && apt-get upgrade -y
 
 # optional package installations
 # * vim for text editing from the shell
@@ -15,7 +15,7 @@ sudo apt-get update && apt-get upgrade -y
 # * zsh (to use oh-my-zsh)
 # * s3cmd
 # * curl (to perform API requests and to download stuff)
-sudo apt-get install -y wget git vim zsh s3cmd curl
+apt-get install -y wget git vim zsh s3cmd curl
 
 
 # Conda stuff
@@ -29,24 +29,23 @@ rm Miniconda-3.5.2-Linux-x86_64.sh
 /work/anaconda/bin/conda install pandas scikit-learn --yes
 echo "export PATH=\"\$PATH:/work/anaconda/bin\"" >> ~/.zshrc
 echo "export PATH=\"\$PATH:/work/anaconda/bin\"" >> ~/.bashrc
-source ~/.bashrc
 
 # IPython notebooks
-conda install ipython-notebook --yes
+/work/anaconda/bin/conda install ipython-notebook --yes
 mkdir -p /notebooks
 echo "alias ipynb='ipython notebook --ip=0.0.0.0 /notebooks/'" >> ~/.zshrc
 echo "alias ipynb='ipython notebook --ip=0.0.0.0 /notebooks/'" >> ~/.bashrc
 
 # Install the pip installer which is often used to install additional packages
-conda install pip --yes # or, with apt-get: apt-get install -y python-pip 
+/work/anaconda/bin/conda install pip --yes # or, with apt-get: apt-get install -y python-pip
 
 
 ####################
 #       BigML      #
 ####################
 
-pip install bigml
-pip install bigmler
+/work/anaconda/bin/pip install bigml
+/work/anaconda/bin/pip install bigmler
 
 
 # #########################
