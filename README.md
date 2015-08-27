@@ -8,9 +8,13 @@ Provisioning of a base box for using Prediction APIs as introduced in [Bootstrap
 Starting from the [Official Ubuntu 14.04 Snap](https://www.terminal.com/snapshot/987f8d702dc0a6e8158b48ccd3dec24f819a7ccb2756c396ef1fd7f5b34b7980), the instal steps are:
 
 > mkdir /work
+
 > cd /work
+
 > git clone github:louisdorard/bml-base.git
+
 > bml-base/provision.sh
+
 > ln -s /work/bml-base/ipynb /notebooks/bml-base
 
 ## Instal on Vagrant -- not maintained anymore
