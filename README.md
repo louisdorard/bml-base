@@ -11,7 +11,9 @@ Starting from the [Official Ubuntu 14.04 Snap](https://www.terminal.com/snapshot
 
 > cd /work
 
-> git clone github:louisdorard/bml-base.git
+> apt-get install -y git
+
+> git clone https://github.com/louisdorard/bml-base.git
 
 > bml-base/provision.sh
 
