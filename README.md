@@ -3,23 +3,14 @@ bml-base
 
 Provisioning of a base box for using Prediction APIs as introduced in [Bootstrapping Machine Learning](http://www.louisdorard.com/machine-learning-book).
 
-## Instal on Terminal.com
+## Install on Terminal.com
 
-Starting from the [Official Ubuntu 14.04 Snap](https://www.terminal.com/snapshot/987f8d702dc0a6e8158b48ccd3dec24f819a7ccb2756c396ef1fd7f5b34b7980), the instal steps are:
+Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b), execute the following command as root from /root:
 
-> mkdir /work
+> git clone https://github.com/louisdorard/bml-base.git ; bash bml-base/install-terminalcom.sh
 
-> cd /work
 
-> apt-get install -y git
-
-> git clone https://github.com/louisdorard/bml-base.git
-
-> bml-base/provision.sh
-
-> ln -s /work/bml-base/ipynb /notebooks/bml-base
-
-## Instal on Vagrant -- not maintained anymore
+## Install on Vagrant -- not maintained anymore
 
 The [Vagrant](http://vagrantup.com/) box is available at https://vagrantcloud.com/louisdorard/bml-base and it uses Virtualbox as a provider.
 
@@ -33,7 +24,7 @@ You can then package it into a box. Instructions on how to create a base box at 
 
 ## Contents
 
-* provision.sh: script used to provision the base box and instal all the necessary software
+* provision.sh: script used to provision the base box and install all the necessary software
 * ipynb/: some IPython notebook tutorials to get started
 * Vagrantfile: config file for Vagrant -- not maintained anymore
 * Dockerfile: work in progress...
