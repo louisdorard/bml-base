@@ -7,7 +7,7 @@
 echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..." # a.k.a. "papibox"
 
 # Install pandas and scikit-learn
-pip install -U scipy pandas scikit-learn
+apt-get install -y python-pandas python-sklearn
 
 # Install BigML API wrappers and CLI tool
 pip install bigml
