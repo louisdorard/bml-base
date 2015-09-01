@@ -13,7 +13,16 @@ apt-get install -y python-pandas python-sklearn
 pip install bigml
 pip install bigmler
 
+# Install Bash Kernel for IPython / Jupyter
+# (adapted from https://github.com/takluyver/bash_kernel)
+pip install bash_kernel
+python -m bash_kernel.install
+service jupyter restart
+
 # Install papiseval
 git clone https://github.com/louisdorard/papiseval.git
 
+clear
+
 echo "bml-base is installed!"
+echo "Start by browsing notebook credentials/Setup.ipynb to set up your API credentials"
