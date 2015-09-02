@@ -13,6 +13,21 @@ apt-get install -y python-pandas python-sklearn
 pip install bigml
 pip install bigmler
 
+# Install Google Prediction API wrappers
+apt-get install build-essential libssl-dev libffi-dev python-dev # see https://cryptography.io/en/latest/installation/
+apt-get install python-openssl # not sure this is required?
+pip install cryptography
+pip install google-api-python-client
+
+# Install gsutil to upload stuff to Google Cloud Storage
+# unfortunately, `pip install -U gsutil` is unstable, so we install it "old-school" (see https://developers.google.com/storage/docs/gsutil_install)
+wget http://storage.googleapis.com/pub/gsutil.tar.gz
+mv gsutil.tar.gz /usr/lib
+tar xfz /usr/lib/gsutil.tar.gz -C /usr/lib/
+echo "export PATH=\"\$PATH:/usr/lib/gsutil\"" >> ~/.bashrc
+echo "export PYTHONPATH=${PYTHONPATH}:/usr/lib/gsutil/third_party/boto:/usr/lib/gsutil" >> ~/.bashrc
+
+
 # Install Bash Kernel for IPython / Jupyter
 # (adapted from https://github.com/takluyver/bash_kernel)
 pip install bash_kernel
