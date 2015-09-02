@@ -14,13 +14,27 @@ Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/sn
 
 The [Vagrant](http://vagrantup.com/) box is available at https://vagrantcloud.com/louisdorard/bml-base and it uses Virtualbox as a provider.
 
-### How to recreate the box
+Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
 
-First of all, create and provision the Virtual Machine:
+Then, when you are at the root of the repository (where this README is), just type:
+
 > vagrant up
 
-You can then package it into a box. Instructions on how to create a base box at https://docs.vagrantup.com/v2/virtualbox/boxes.html. Essentially once the VM has been created with Virtualbox you just launch:
+This will create and boot a VM that runs Ubuntu Precise 64bit and contains everything you need to use Prediction APIs. The VM is based off [bml-base](https://vagrantcloud.com/louisdorard/bml-base) which is a Vagrant "box" (i.e. VM image) that weighs about 600 MB. It will be downloaded automatically by Vagrant during the "up", so please allow for a few minutes for the command to complete.
+
+You can then log into the VM as the 'vagrant' user with:
+
+> vagrant ssh
+
+All the files in the repository are accessible in the VM in the root directory /vagrant (shared directory).
+
+
+### How to recreate the box
+
+Instructions on how to create a base box at https://docs.vagrantup.com/v2/virtualbox/boxes.html. Essentially once the VM has been created with Virtualbox you just launch:
+
 > vagrant package --base bml-base
+
 
 ## Contents
 
