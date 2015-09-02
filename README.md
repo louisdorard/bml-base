@@ -9,26 +9,21 @@ Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/sn
 
 > git clone https://github.com/louisdorard/bml-base.git ; bash bml-base/install-terminalcom.sh
 
+## Credentials
 
-## Install on Vagrant -- not maintained anymore
-
-The [Vagrant](http://vagrantup.com/) box is available at https://vagrantcloud.com/louisdorard/bml-base and it uses Virtualbox as a provider.
-
-### How to recreate the box
-
-First of all, create and provision the Virtual Machine:
-> vagrant up
-
-You can then package it into a box. Instructions on how to create a base box at https://docs.vagrantup.com/v2/virtualbox/boxes.html. Essentially once the VM has been created with Virtualbox you just launch:
-> vagrant package --base bml-base
+Setup your API credentials from the Bash notebook credentials/Setup.ipynb
 
 ## Contents
 
-* provision.sh: script used to provision the base box and install all the necessary software
-* ipynb/: some IPython notebook tutorials to get started
-* Vagrantfile: config file for Vagrant -- not maintained anymore
-* Dockerfile: work in progress...
+* install-terminalcom.sh: script used to install all the necessary software
+* \*.ipynb: some IPython notebook tutorials to get started
+* credentials/: directory where your API credentials should be stored
 
 ## Learn more
 
 Learn how to use Prediction APIs to [bootstrap Machine Learning](http://www.louisdorard.com/machine-learning-book).
+
+Check out these notebooks:
+
+- [Introduction to Python Programming](https://www.wakari.io/nb/url///wakari.io/static/notebooks/Lecture_1_Introduction_to_Python_Programming.ipynb)
+- [Diving into Open Data with IPython Notebook & Pandas](http://nbviewer.ipython.org/github/jvns/talks/blob/master/pyconca2013/pistes-cyclables.ipynb)
