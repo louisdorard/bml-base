@@ -5,7 +5,10 @@ Provisioning of a base box for using Prediction APIs as introduced in [Bootstrap
 
 ## Install on Terminal.com
 
-Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b), execute the following command as root from /root:
+Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b):
+
+* Create /work as a new directory (or an alias to an existing directory) which will be the root of the Jupyter server and where you will place all code repos
+* Execute the following command as root from /work:
 
 > git clone https://github.com/louisdorard/bml-base.git ; bash bml-base/install-terminalcom.sh
 

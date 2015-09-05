@@ -2,7 +2,7 @@
 
 # Provisioning script to be run on "iPython4 Notebook - Jupyter" Snap on Terminal.com
 # (see https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b)
-# as root from /root
+# as root from /work
 
 echo "Provisioning the Bootstrapping Machine Learning base box (bml-base)..." # a.k.a. "papibox"
 
@@ -28,11 +28,14 @@ tar xfz /usr/lib/gsutil.tar.gz -C /usr/lib/
 echo "export PATH=\"\$PATH:/usr/lib/gsutil\"" >> ~/.bashrc
 echo "export PYTHONPATH=${PYTHONPATH}:/usr/lib/gsutil/third_party/boto:/usr/lib/gsutil" >> ~/.bashrc
 
+# Use custom Jupyter config file (home is defined as /work instead of /root)
+cp jupyter.conf /etc/init/
 
 # Install Bash Kernel for IPython / Jupyter
 # (adapted from https://github.com/takluyver/bash_kernel)
 pip install bash_kernel
 python -m bash_kernel.install
+
 service jupyter restart
 
 # Install papiseval
