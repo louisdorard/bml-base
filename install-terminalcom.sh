@@ -13,11 +13,12 @@ apt-get install -y python-pandas python-sklearn
 pip install bigml
 pip install bigmler
 
-# Install Google Prediction API wrappers
+# Install Google API client
 apt-get install build-essential libssl-dev libffi-dev python-dev # see https://cryptography.io/en/latest/installation/
 apt-get install python-openssl # not sure this is required?
 pip install cryptography
 pip install google-api-python-client
+cp gpred.py /usr/local/lib/python2.7/dist-packages/googleapiclient # makes it easier to create wrapper for gpred
 
 # Install gsutil to upload stuff to Google Cloud Storage
 # unfortunately, `pip install -U gsutil` is unstable, so we install it "old-school" (see https://developers.google.com/storage/docs/gsutil_install)
