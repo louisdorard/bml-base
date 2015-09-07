@@ -27,20 +27,3 @@ def api(path):
     except client.AccessTokenRefreshError:
         print ("The credentials have been revoked or expired, please re-run"
           "the application to re-authorize")
-
-
-def create_oauth_tokens(service_account, oauth):
-
-  STORAGE = file.Storage(oauth) #local storage of oAuth tokens
-  with open(service_account) as f:
-    account = json.loads(f.read())
-    email = account['client_email']
-    key = account['private_key']
-    scope = [
-      'https://www.googleapis.com/auth/prediction',
-      'https://www.googleapis.com/auth/devstorage.full_control'
-    ]
-    
-  credentials = client.SignedJwtAssertionCredentials(email, key, scope=scope)
-  STORAGE.put(credentials)
-  return credentials
