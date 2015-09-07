@@ -42,9 +42,6 @@ python -m bash_kernel.install
 
 service jupyter restart
 
-# Install papiseval
-git clone https://github.com/louisdorard/papiseval.git
-
 popd
 
 clear
