@@ -12,6 +12,8 @@ Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/sn
 
 > git clone https://github.com/louisdorard/bml-base.git ; bash bml-base/install-terminalcom.sh
 
+* Navigate browser to IPython server, directory /work/bml-base/credentials
+
 ## Credentials
 
 Setup your API credentials from the Bash notebook credentials/Setup.ipynb

@@ -16,22 +16,24 @@ pip install bigml
 pip install bigmler
 
 # Install Google API client
-apt-get install build-essential libssl-dev libffi-dev python-dev # see https://cryptography.io/en/latest/installation/
-apt-get install python-openssl # not sure this is required?
+apt-get install -y libssl-dev libffi-dev # see https://cryptography.io/en/latest/installation/
+apt-get install -y python-openssl # not sure this is required?
 pip install cryptography
 pip install google-api-python-client
 cp gpred.py /usr/local/lib/python2.7/dist-packages/googleapiclient # makes it easier to create wrapper for gpred
 
-# Install gsutil to upload stuff to Google Cloud Storage
+# Install gsutil and gcs-oauth2-boto-plugin (authentication plugin for the boto auth plugin framework) to upload stuff to Google Cloud Storage
 # unfortunately, `pip install -U gsutil` is unstable, so we install it "old-school" (see https://developers.google.com/storage/docs/gsutil_install)
 wget http://storage.googleapis.com/pub/gsutil.tar.gz
 mv gsutil.tar.gz /usr/lib
 tar xfz /usr/lib/gsutil.tar.gz -C /usr/lib/
 echo "export PATH=\"\$PATH:/usr/lib/gsutil\"" >> ~/.bashrc
 echo "export PYTHONPATH=${PYTHONPATH}:/usr/lib/gsutil/third_party/boto:/usr/lib/gsutil" >> ~/.bashrc
+pip install gcs-oauth2-boto-plugin==1.9
 
-# Use custom Jupyter config file (home is defined as /work instead of /root)
+# Use custom Jupyter config files (home is defined as /work instead of /root)
 cp jupyter.conf /etc/init/
+cp ipython_config.py /root/.ipython/profile_nbserver/
 
 # Install Bash Kernel for IPython / Jupyter
 # (adapted from https://github.com/takluyver/bash_kernel)
