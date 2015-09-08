@@ -30,5 +30,5 @@ Learn how to use Prediction APIs to [bootstrap Machine Learning](http://www.loui
 
 Check out these notebooks:
 
-- [Introduction to Python Programming](https://www.wakari.io/nb/url///wakari.io/static/notebooks/Lecture_1_Introduction_to_Python_Programming.ipynb)
+- Introduction to Python Programming in [scientific-python-lectures](https://github.com/jrjohansson/scientific-python-lectures)
 - [Diving into Open Data with IPython Notebook & Pandas](http://nbviewer.ipython.org/github/jvns/talks/blob/master/pyconca2013/pistes-cyclables.ipynb)
