@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+import json
 from oauth2client import tools, file, client
 
 STORAGE = file.Storage('gpred_oauth.json') #local storage of oAuth tokens
