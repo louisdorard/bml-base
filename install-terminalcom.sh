@@ -18,6 +18,11 @@ pip install bigmler
 # Install SKLL
 pip install skll
 
+# Install graphviz and pydot
+apt-get install graphviz
+pip install graphviz
+pip install pydot
+
 # Install Google API client
 apt-get install -y libssl-dev libffi-dev # see https://cryptography.io/en/latest/installation/
 apt-get install -y python-openssl # not sure this is required?
