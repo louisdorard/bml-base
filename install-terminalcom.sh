@@ -15,6 +15,9 @@ apt-get install -y python-pandas python-sklearn
 pip install bigml
 pip install bigmler
 
+# Install SKLL
+pip install skll
+
 # Install Google API client
 apt-get install -y libssl-dev libffi-dev # see https://cryptography.io/en/latest/installation/
 apt-get install -y python-openssl # not sure this is required?
