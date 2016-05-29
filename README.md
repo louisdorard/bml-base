@@ -3,18 +3,27 @@ bml-base
 
 Provisioning of a base box for using Prediction APIs as introduced in [Bootstrapping Machine Learning](http://www.louisdorard.com/machine-learning-book).
 
-## Install on Terminal.com
+## On Ubuntu 14.04
 
-Starting from the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b):
+First, you need Jupyter. You can install it with:
 
-* Create /work as a new directory (or an alias to an existing directory) which will be the root of the Jupyter server and where you will place all code repos
-* Execute the following command as root from /work:
+> wget https://raw.githubusercontent.com/terminalcloud/apps/master/ipython-ntb4_installer.sh && bash ipython-ntb4_installer.sh
 
-> git clone https://github.com/louisdorard/bml-base.git ; bash bml-base/install-terminalcom.sh
+If you use Terminal.com, you can just use the [IPython4 Notebook - Jupyter Snap](https://www.terminal.com/snapshot/e812ebe24e3796846a0a4b930a810a45135af5fbcc5502a32526fc4c80b8e09b).
 
-* Navigate browser to IPython server, directory /work/bml-base/credentials
+By convention I am putting all the resources in /work. Create it as a new directory if it doesn't exist in your machine (or create an alias to an existing directory). This will be the root of the Jupyter server and where you will place all code repos.
 
-## Credentials
+I recommend to clone this repo in /work:
+
+> git clone https://github.com/louisdorard/bml-base.git
+
+You can then install everything using the dedicated script in this repo:
+
+> bash bml-base/install-terminalcom.sh
+
+After the instal procedure you should be able to connect to the Jupyter server in your browser (port 8888).
+
+## Credentials (optional)
 
 Setup your API credentials from the Bash notebook credentials/Setup.ipynb
 
